@@ -15,9 +15,11 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Explore"
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true;
         
-        
-        test.image = UIImage(named: "group")
+        //test.image = UIImage(named: "group")
         
         //Setup the TableView
         let cellNib = UINib(nibName: "CustomCell", bundle: nil)
