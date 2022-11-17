@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BED57B7DA0B97AD615746808 /* Pods_MStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1358967737FD8DD4ECFCDEA9 /* Pods_MStudy.framework */; };
+		C330E38A291DD71800CABF68 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C330E389291DD71800CABF68 /* ComposeViewController.swift */; };
 		C36BBFE229148BD000E7A021 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BBFE129148BD000E7A021 /* ExploreViewController.swift */; };
 		C36BBFE429148C8000E7A021 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36BBFE329148C8000E7A021 /* CustomCell.xib */; };
 		C36BBFE629148CA000E7A021 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BBFE529148CA000E7A021 /* CustomTableViewCell.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		1358967737FD8DD4ECFCDEA9 /* Pods_MStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF5649BD70006A778CE2F5B /* Pods-MStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MStudy.release.xcconfig"; path = "Target Support Files/Pods-MStudy/Pods-MStudy.release.xcconfig"; sourceTree = "<group>"; };
+		C330E389291DD71800CABF68 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		C36BBFE129148BD000E7A021 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		C36BBFE329148C8000E7A021 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C36BBFE529148CA000E7A021 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				C39048CB291D6AB700B25BD5 /* CreateNewPostViewController.swift */,
 				C372EF9A291D8B9B00A220B7 /* SignInViewController.swift */,
 				C3FACE39291D97ED00E99047 /* SignUpViewController.swift */,
+				C330E389291DD71800CABF68 /* ComposeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C330E38A291DD71800CABF68 /* ComposeViewController.swift in Sources */,
 				C372EF9B291D8B9B00A220B7 /* SignInViewController.swift in Sources */,
 				C39048CE291D6AE700B25BD5 /* DatabaseManager.swift in Sources */,
 				C39048D1291D6B0000B25BD5 /* AuthManager.swift in Sources */,

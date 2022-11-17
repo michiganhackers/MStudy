@@ -65,6 +65,7 @@ class SignUpViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
+        button.isUserInteractionEnabled = true
         return button
     }()
 
@@ -110,6 +111,9 @@ class SignUpViewController: UIViewController {
                     guard inserted else{
                         return
                     }
+                    
+                    UserDefaults.standard.set(email, forKey: "email")
+                    UserDefaults.standard.set(name, forKey: "name")
 
                     DispatchQueue.main.async {
                         self?.performSegue(withIdentifier: "signUpSegue", sender: self)

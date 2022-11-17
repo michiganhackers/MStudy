@@ -50,6 +50,7 @@ class SignInViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
+        button.isUserInteractionEnabled = true
         return button
     }()
 
@@ -93,6 +94,7 @@ class SignInViewController: UIViewController {
         guard let email = emailField.text, !email.isEmpty, let password = passwordField.text, !password.isEmpty else {
             return
         }
+        UserDefaults.standard.set(email, forKey: "email")
         
         AuthManager.shared.signIn(email: email, password: password) { success in
             if (success){
