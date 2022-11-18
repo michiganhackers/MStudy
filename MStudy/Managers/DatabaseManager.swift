@@ -38,7 +38,7 @@ final class DatabaseManager{
     
     //DESCRIPTION: This method fetches ALL posts by ALL users from firebase.
     //RETURNS: Completion handler giving all posts registered on firebase...
-    public func getAllPosts(completion: @escaping([Post])->Void){
+    public func getAllPosts(completion: @escaping([Post?])->Void){
         database.collection("users").getDocuments { [weak self] snapshot, error in
             guard let documents = snapshot?.documents.compactMap({ $0.data() }), error == nil else {
                 return
@@ -54,7 +54,7 @@ final class DatabaseManager{
             }
             
             let group = DispatchGroup()
-            var result: [Post] = []
+            var result: [Post?] = []
             
             for email in emails {
                 group.enter()
@@ -75,7 +75,7 @@ final class DatabaseManager{
     
     //DESCRIPTION: This method fetches ALL posts made by a specific user...
     //RETURNS: Completion handler giving all posts from that user
-    public func getPosts(for email: String, completion: @escaping([Post])->Void){
+    public func getPosts(for email: String, completion: @escaping([Post?])->Void){
         let userEmail = email.replacingOccurrences(of: ".", with: "_").replacingOccurrences(of: "@", with: "_")
         
         database.collection("users").document(userEmail).collection("posts").getDocuments { snapshot, error in
@@ -84,7 +84,7 @@ final class DatabaseManager{
                 return
             }
 
-            let posts: [Post] = documents.compactMap({ dictionary in
+            let posts: [Post?] = documents.compactMap({ dictionary in
                 guard let title = dictionary["title"] as? String,
                       let group_size = dictionary["group_size"] as? Int?,
                       let study_location = dictionary["study_location"] as? String,
@@ -95,7 +95,7 @@ final class DatabaseManager{
                       let created = dictionary["created"] as? TimeInterval else {
                     
                     print("Invalid post fetch conversion")
-                    return
+                    return nil
                 }
             
                 //Create post object and return it...
